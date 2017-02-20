@@ -1,0 +1,15 @@
+body {
+
+    font-family: 'Shadows Into Light', cursive;
+    font-size: 24px;
+}
+
+body h1 {
+    font-size: 45px;
+    text-align: center;
+    padding-bottom: 30px;
+}
+
+.btn {
+    font-size: 24px;
+}
