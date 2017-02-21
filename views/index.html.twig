@@ -12,11 +12,11 @@
 
             <p>Create a new category:</p>
 
-            <form class="form-group" action="/categories" method="post">
+            <form action="/categories" method="post">
                 <label for="name">Category name:</label>
-                <input type="text" name="name" id="name">
+                <input id="name" name="name" type="text">
 
-                <button class="btn-success" type="submit" name="button">Add category</button>
+                <button class="btn-success" type="submit">Add category</button>
             </form>
 
             {% if categories is not empty %}

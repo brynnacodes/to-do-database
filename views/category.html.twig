@@ -2,31 +2,41 @@
 <html>
     <head>
         <title>To Do List</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <link rel="stylesheet" href="/css/styles.css" type="text/css">
+        <link href="https://fonts.googleapis.com/css?family=Shadows+Into+Light" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     </head>
     <body>
-        <h1>{{ category.getName }}</h1>
+        <div class="container-fluid">
+            <h1>{{ category.getName }}</h1>
 
-        {% if tasks is not empty %}
-            <p>Here are the tasks:</p>
-            <ul>
-                {% for task in tasks %}
-                    <li>{{ task.getDescription }}  {{ task.getDate }}</li>
-                {% endfor %}
-            </ul>
-        {% endif %}
+            {% if tasks is not empty %}
+                <p>Here are the tasks:</p>
+                <ul>
+                    {% for task in tasks %}
+                        <li>{{ task.getDescription }}  {{ task.getDate }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
 
-        <h4>Add a task</h4>
+            <h4>Add a task</h4>
 
-        <form action='/tasks' method='post'>
-            <input id="category_id" name="category_id" type="hidden" value="{{ category.getId() }}">
-            <label for='description'>Task Description</label>
-            <input id='description' name='description' type='text'>
-            <label for='date'>Task Due</label>
-            <input id='date' name='date' type='date'>
+            <form action='/tasks' method='post'>
+                <input id="category_id" name="category_id" type="hidden" value="{{ category.getId() }}">
+                <label for='description'>Task Description</label>
+                <input id='description' name='description' type='text'>
+                <label for='date'>Task Due</label>
+                <input id='date' name='date' type='date'>
 
-            <button type='submit'>Add task</button>
-        </form>
+                <button type='submit'>Add task</button>
+            </form>
 
-        <p><a href='/'>Home</a></p>
+            <form action='/delete_tasks' method='post'>
+                <button class="btn" type='submit'>Clear</button>
+            </form>
+
+            <p><a href='/'>Home</a></p>
+        </div>
     </body>
 </html>
