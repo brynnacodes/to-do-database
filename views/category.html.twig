@@ -10,7 +10,7 @@
             <p>Here are the tasks:</p>
             <ul>
                 {% for task in tasks %}
-                    <li>{{ task.getDescription }}</li>
+                    <li>{{ task.getDescription }}  {{ task.getDate }}</li>
                 {% endfor %}
             </ul>
         {% endif %}
