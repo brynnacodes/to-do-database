@@ -6,7 +6,7 @@
 
     $app = new Silex\Application();
 
-    $server = 'mysql:host=localhost:8889;_socket=/Applications/MAMP/tmp/mysql/mysql.sock;dbname=to_do';
+    $server = 'mysql:host=localhost:8889;dbname=to_do';
     $username = 'root';
     $password = 'root';
     $DB = new PDO($server, $username, $password);
@@ -49,6 +49,6 @@
         Category::deleteAll();
         return $app['twig']->render('index.html.twig');
     });
-    
+
     return $app;
 ?>
